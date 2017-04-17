@@ -1,0 +1,94 @@
+﻿@{
+    Layout = null;
+}
+
+@{
+    <h4> Show all Students studying in Standard 10, from all Schools </h4>
+    <br />
+    <div id="divtable">
+
+        @if (ViewBag.Link1 != null)
+        {
+            <table class="table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+
+                        <th>
+                            Student Name
+                        </th>
+
+                        <th>
+                            School Name
+                        </th>
+
+                        <th>
+                            Standard Name
+                        </th>
+
+
+                        <th>
+                            Roll Number
+                        </th>
+
+                        <th>
+                            Date of Birth
+                        </th>
+
+                        <th>
+                            Blood Group
+                        </th>
+
+                        <th>
+                            Gender
+                        </th>
+                    </tr>
+
+                </thead>
+                @foreach (var stu in ViewBag.Link1)
+                {
+                    <tr>
+                        <td>
+                            @stu.Id
+                        </td>
+
+                        <td>
+                            @stu.Name
+                        </td>
+
+                        <td>
+                            @stu.School_Name
+                        </td>
+
+                        <td>
+                            @stu.Standard_Name
+                        </td>
+
+                        <td>
+                            @stu.Roll_No
+                        </td>
+
+                        <td>
+                            @stu.DOB
+                        </td>
+
+                        <td>
+                            @stu.Blood_Group
+                        </td>
+
+                        <td>
+                            @stu.Gender
+                        </td>
+
+                    </tr>
+                }
+            </table>
+
+
+        }
+
+    </div>
+}
+

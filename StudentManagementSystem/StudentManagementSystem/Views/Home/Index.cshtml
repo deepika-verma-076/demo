@@ -1,0 +1,363 @@
+﻿@{
+    Layout = null;
+}
+
+<h1 style="text-align: center;" >Student Magement System</h1>
+
+
+<script src="~/Scripts/jquery-1.11.3.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="~/Scripts/bootstrap.min.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    function AddStudent() {
+       
+        var TeamDetailPostBackURL = 'Home/AddStudent';
+        $('#myModalContentStd').html("");
+        var $buttonClicked = $(this);
+        var id = $buttonClicked.attr('data-id');
+        var options = { "backdrop": "static", keyboard: true };
+        $.ajax({
+            type: "GET",
+            url: TeamDetailPostBackURL,
+            contentType: "application/json; charset=utf-8",
+            data: { "id": id },
+            datatype: "json",
+            success: function (data) {
+
+                $('#myModalContentStd').html(data);
+                $('#myModalStd').modal(options);
+                $('#myModalStd').modal("show");
+
+            },
+            error: function () {
+                alert("Dynamic content load failed.");
+            }
+        });
+    }
+    $("#closbtn").click(function () {
+        $('#myModalStd').modal('hide');
+    });
+
+</script>
+
+<script type="text/javascript">
+    function AddSchool() {
+
+        var TeamDetailPostBackURL = 'Home/AddSchool';
+        $('#myModalContentStd').html("");
+        var $buttonClicked = $(this);
+        var id = $buttonClicked.attr('data-id');
+        var options = { "backdrop": "static", keyboard: true };
+        $.ajax({
+            type: "GET",
+            url: TeamDetailPostBackURL,
+            contentType: "application/json; charset=utf-8",
+            data: { "id": id },
+            datatype: "json",
+            success: function (data) {
+
+                $('#myModalContentStd').html(data);
+                $('#myModalStd').modal(options);
+                $('#myModalStd').modal("show");
+
+            },
+            error: function () {
+                alert("Dynamic content load failed.");
+            }
+        });
+    }
+    $("#closbtn").click(function () {
+        $('#myModalStd').modal('hide');
+    });
+
+</script>
+
+<script type="text/javascript">
+    function AddStandard() {
+
+        var TeamDetailPostBackURL = 'Home/AddStandard';
+        $('#myModalContentStd').html("");
+        var $buttonClicked = $(this);
+        var id = $buttonClicked.attr('data-id');
+        var options = { "backdrop": "static", keyboard: true };
+        $.ajax({
+            type: "GET",
+            url: TeamDetailPostBackURL,
+            contentType: "application/json; charset=utf-8",
+            data: { "id": id },
+            datatype: "json",
+            success: function (data) {
+
+                $('#myModalContentStd').html(data);
+                $('#myModalStd').modal(options);
+                $('#myModalStd').modal("show");
+
+            },
+            error: function () {
+                alert("Dynamic content load failed.");
+            }
+        });
+    }
+    $("#closbtn").click(function () {
+        $('#myModalStd').modal('hide');
+    });
+
+</script>
+
+<script type="text/javascript">
+    function AddSection() {
+
+        var TeamDetailPostBackURL = 'Home/AddSection';
+        $('#myModalContentStd').html("");
+        var $buttonClicked = $(this);
+        var id = $buttonClicked.attr('data-id');
+        var options = { "backdrop": "static", keyboard: true };
+        $.ajax({
+            type: "GET",
+            url: TeamDetailPostBackURL,
+            contentType: "application/json; charset=utf-8",
+            data: { "id": id },
+            datatype: "json",
+            success: function (data) {
+
+                $('#myModalContentStd').html(data);
+                $('#myModalStd').modal(options);
+                $('#myModalStd').modal("show");
+
+            },
+            error: function () {
+                alert("Dynamic content load failed.");
+            }
+        });
+    }
+    $("#closbtn").click(function () {
+        $('#myModalStd').modal('hide');
+    });
+
+</script>
+
+<script type="text/javascript">
+    function BulkUpload() {
+
+        var TeamDetailPostBackURL = 'Home/BlukUpload';
+        $('#myModalContentStd').html("");
+        var $buttonClicked = $(this);
+        var id = $buttonClicked.attr('data-id');
+        var options = { "backdrop": "static", keyboard: true };
+        $.ajax({
+            type: "GET",
+            url: TeamDetailPostBackURL,
+            contentType: "application/json; charset=utf-8",
+            data: { "id": id },
+            datatype: "json",
+            success: function (data) {
+
+                $('#myModalContentStd').html(data);
+                $('#myModalStd').modal(options);
+                $('#myModalStd').modal("show");
+
+            },
+            error: function () {
+                alert("Dynamic content load failed.");
+            }
+        });
+    }
+    $("#closbtn").click(function () {
+        $('#myModalStd').modal('hide');
+    });
+
+</script>
+
+<script type="text/javascript">
+    function ViewStudent() {
+
+        $.ajax(
+           {
+               url: '/Home/ViewStudent',
+               type: 'POST',
+               //data: $('#formDepartment').serialize(),
+               //contentType: 'application/json; charset=utf-8',
+               success: function (data ) {
+
+                  // $('#myModal').modal('hide');
+                   $("#divViewStudent").html(data);
+               },
+               error: function () {
+                   alert("error");
+               }
+           });
+    }
+
+</script>
+
+<script type="text/javascript">
+    function ViewLink1() {
+
+        $.ajax(
+           {
+               url: '/Home/ViewLink1',
+               type: 'POST',
+               //data: $('#formDepartment').serialize(),
+               //contentType: 'application/json; charset=utf-8',
+               success: function (data ) {
+
+                  // $('#myModal').modal('hide');
+                   $("#divViewStudent").html(data);
+               },
+               error: function () {
+                   alert("error");
+               }
+           });
+    }
+
+</script>
+
+<script type="text/javascript">
+    function ViewLink2() {
+
+        $.ajax(
+           {
+               url: '/Home/ViewLink2',
+               type: 'POST',
+               //data: $('#formDepartment').serialize(),
+               //contentType: 'application/json; charset=utf-8',
+               success: function (data ) {
+
+                  // $('#myModal').modal('hide');
+                   $("#divViewStudent").html(data);
+               },
+               error: function () {
+                   alert("error");
+               }
+           });
+    }
+
+</script>
+
+<script type="text/javascript">
+    function ViewLink3() {
+
+        $.ajax(
+           {
+               url: '/Home/ViewLink3',
+               type: 'POST',
+               //data: $('#formDepartment').serialize(),
+               //contentType: 'application/json; charset=utf-8',
+               success: function (data ) {
+
+                  // $('#myModal').modal('hide');
+                   $("#divViewStudent").html(data);
+               },
+               error: function () {
+                   alert("error");
+               }
+           });
+    }
+
+</script>
+
+<script type="text/javascript">
+    function ViewLink4() {
+
+        $.ajax(
+           {
+               url: '/Home/ViewLink4',
+               type: 'POST',
+               //data: $('#formDepartment').serialize(),
+               //contentType: 'application/json; charset=utf-8',
+               success: function (data ) {
+
+                  // $('#myModal').modal('hide');
+                   $("#divViewStudent").html(data);
+               },
+               error: function () {
+                   alert("error");
+               }
+           });
+    }
+
+</script>
+
+<script type="text/javascript">
+    function ViewLink5() {
+
+        $.ajax(
+           {
+               url: '/Home/ViewLink5',
+               type: 'POST',
+               //data: $('#formDepartment').serialize(),
+               //contentType: 'application/json; charset=utf-8',
+               success: function (data ) {
+
+                  // $('#myModal').modal('hide');
+                   $("#divViewStudent").html(data);
+               },
+               error: function () {
+                   alert("error");
+               }
+           });
+    }
+
+</script>
+
+<br /><br />
+<body style="padding: 50;">
+
+    <table style="width:100% ; ">
+        <tr>
+            <th>Add Student Individually</th>
+            <th>Add Students via Excel Sheet</th>
+            <th>View Student's Data</th>
+        </tr>
+        <tr>
+            <td> <a href="javascript:void(0);" class="Student" onclick="AddStudent()">Add Student</a> </td>
+            <td> <a href="javascript:void(0);" class="BulkAdd" onclick="BulkUpload()">Bulk Upload</a> </td>
+            <td> <a href="javascript:void(0);" class="EditSAP custom-add" onclick="ViewStudent()">View All</a> </td>
+        </tr>
+        <tr>
+            <td> <a href="javascript:void(0);" class="Student" onclick="AddSchool()">Add School</a> </td>
+            <td></td>
+            <td><a href="javascript:void(0);" class="EditSAP custom-add" onclick="ViewLink1()">Link 1</a></td>
+        </tr>
+        <tr>
+            <td> <a href="javascript:void(0);" class="Student" onclick="AddStandard()">Add Standard</a> </td>
+            <td></td>
+            <td><a href="javascript:void(0);" class="EditSAP custom-add" onclick="ViewLink2()">Link 2</a></td>
+        </tr>
+        <tr>
+            <td> <a href="javascript:void(0);" class="Student" onclick="AddSection()">Add Section</a> </td>
+            <td></td>
+            <td><a href="javascript:void(0);" class="EditSAP custom-add" onclick="ViewLink3()">Link 3</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><a href="javascript:void(0);" class="EditSAP custom-add" onclick="ViewLink4()">Link 4</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><a href="javascript:void(0);" class="EditSAP custom-add" onclick="ViewLink5()">Link 5</a></td>
+        </tr>
+    </table>
+
+    <br /> <br />
+
+    <div id="divViewStudent"> </div>
+
+</body>
+
+
+
+
+<div id="myModalStd" class="modal">
+    <div class="modal-dialog" style="left:0px">
+        <div class="modal-content">
+            <div id='myModalContentStd'></div>
+        </div>
+    </div>
+</div>
+
+
+

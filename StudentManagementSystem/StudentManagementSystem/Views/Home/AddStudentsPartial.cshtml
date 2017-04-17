@@ -1,0 +1,132 @@
+﻿@{
+    Layout = null;
+}
+
+@model StudentManagementSystem.Models.Student
+
+
+
+<script type="text/javascript">
+    function updateStudents() {
+
+        $.ajax(
+           {
+               url: '/Home/uploadStudent',
+               type: 'POST',
+               data: $('#formLeaderEdit').serialize(),
+               //contentType: 'application/json; charset=utf-8',
+               success: function (data) {
+                   $('#myModalStd').modal('hide');
+                   $("#viewload").html(data);
+               },
+               error: function () {
+                   alert("error");
+               }
+           });
+    }
+
+    //$("#txtrollno").autocomplete({
+    //    alert("test")
+    //        return false;
+    //    });
+
+    $("#txtrollno").blur(function () {
+       // $("#spnmsg").hide();
+        //alert("test")
+       // source: function(request,response) {  
+            $.ajax({  
+                url: "/Home/CheckRoll",
+                type: "POST",  
+                dataType: "json",  
+                data: { school_id: $('#ddlschool').val(), standard_id: $('#ddlstandard').val(), section_id: $('#ddlsection').val(), roll_no: $("#txtrollno").val() },
+                success: function (d) {  
+                    //response($.map(data, function (item) {  
+                    //    return { label: item.Name, value: item.Name };  
+                    //})) 
+
+                    //alert(d);
+                   // var json = JSON.parse(JSON.stringify(d));
+
+                    $("#spnmsg").html(d);
+                    $("#spnmsg").show();
+  
+                }  
+            })  
+        //},  
+        //messages: {  
+        //    noResults: 
+        
+        return false;
+    });
+
+    
+
+</script>
+
+<div>
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h2 class="modal-title" id="myModalLabel" style="text-align: center;"> Add Students </h2>
+    </div>
+
+    <form id="formLeaderEdit" method="post" style="padding: 50;">
+        <div class="editor-label">
+            @Html.Label("Name", new { @name = "name", required = "required", type = "text", id = "lblName" })
+            </div>
+            <div class="editor-label">
+            @Html.TextBoxFor(m => m.Name)
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.School_Id, new SelectList(ViewBag.School, "Value", "Text"), "School",
+              new { @class = "form-control", id="ddlschool" })
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.Standard_Id, new SelectList(ViewBag.Standard, "Value", "Text"), "Standard",
+              new { @class = "form-control", id = "ddlstandard" })
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.Section_Id, new SelectList(ViewBag.Section, "Value", "Text"), "Section",
+              new { @class = "form-control", id = "ddlsection" })
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.Label("Roll Number", new { @name = "no", required = "required", type = "number", id = "lblRollNo" })
+        </div>
+
+        <div class="editor-label">
+            @Html.TextBoxFor(m => m.Roll_No, new { id = "txtrollno" })
+            <span id="spnmsg" style="display:none"></span>
+        </div>
+        <br/>
+        <div class="editor-label">
+            @Html.Label("Date of Birth", new { @name = "DOB", required = "required", type = "text", id = "lblDOB" })
+        </div>
+        <div class="editor-label">
+            @Html.TextBoxFor(m => m.DOB)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.Label("Blood Group", new { @name = "BloodGroup", required = "required", type = "text", id = "lblBloodGroup" })
+        </div>
+        <div class="editor-label">
+            @Html.TextBoxFor(m => m.Blood_Group)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.Label("Gender", new { @name = "Gender", required = "required", type = "text", id = "lblGender" })
+        </div>
+        <div class="editor-label">
+            @Html.TextBoxFor(m => m.Gender)
+        </div>
+        <br />
+        <div>
+            <p>
+                <input type="button" name="Update" value="Submit" onclick="updateStudents()" />
+            </p>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+
+@{
+    <h4> Show a table like below, containing records for all Standards in all Schools </h4>
+    <br />
+    <div id="divtable">
+
+        @if (ViewBag.Link5 != null)
+        {
+            <table class="table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            School Name
+                        </th>
+
+                        <th>
+                            Standard Name
+                        </th>
+
+                        <th>
+                           Male
+                        </th>
+
+                        <th>
+                            Female
+                        </th>
+                    </tr>
+
+                </thead>
+                @foreach (var stu in ViewBag.Link5)
+                {
+                    <tr>
+                        <td>
+                            @stu.Id
+                        </td>
+
+                        
+                        <td>
+                            @stu.School_Name
+                        </td>
+
+                        <td>
+                            @stu.Standard_Name
+                        </td>
+
+                        <td>
+                            @stu.Male
+                        </td>
+
+                        <td>
+                            @stu.Female
+                        </td>
+
+                    </tr>
+                }
+            </table>
+
+
+        }
+
+    </div>
+}
+

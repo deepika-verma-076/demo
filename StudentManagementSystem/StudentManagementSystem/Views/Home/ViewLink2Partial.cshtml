@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+@{
+    <h4> Number of Students studying in Section A of any Standard, from all Schools </h4>
+    <br />
+
+    <div id="divtable">
+
+        @if (ViewBag.Link2 != null)
+        {
+            <table class="table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Count
+                        </th>                       
+                    </tr>
+
+                </thead>
+                @foreach (var stu in ViewBag.Link2)
+                {
+                    <tr>
+                        <td>
+                            @stu.count
+                        </td> 
+                    </tr>
+                }
+            </table>
+
+
+        }
+
+    </div>
+}
+
