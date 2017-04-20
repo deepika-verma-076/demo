@@ -43,6 +43,7 @@ namespace StudentManagementSystem.Base_Controller
 
         public void saveStudent(Student std)
         {
+           // DateTime dt = DateTime.Parse(std.DOB);
             string queryStudent = "Insert into [dbo].[tbl_student] (Name, Roll_No, DOB, Blood_Group, Gender, School_Id, Standard_Id, Section_Id, Status, Created_on) values('"
                 + std.Name + "'," + std.Roll_No + ",'" + std.DOB + "','" + std.Blood_Group + "','" + std.Gender + "'," + std.School_Id + "," + std.Standard_Id + ","
                 + std.Section_Id + ",'" + status + "','"+ datetime +"'); ";
@@ -75,7 +76,7 @@ namespace StudentManagementSystem.Base_Controller
 
         public void saveSection(Section sec)
         {
-            string querySection = "Insert into [dbo].[tbl_standard] (Name, Status, Created_on) values ('" + sec.Name + "','" + status + "','" + datetime + "'); ";
+            string querySection = "Insert into [dbo].[tbl_section] (Name, Status, Created_on) values ('" + sec.Name + "','" + status + "','" + datetime + "'); ";
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(querySection, con);
             con.Open();

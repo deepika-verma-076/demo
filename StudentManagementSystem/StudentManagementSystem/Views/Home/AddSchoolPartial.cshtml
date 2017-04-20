@@ -29,12 +29,12 @@
 <div>
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h2 class="modal-title" id="myModalLabel" style="text-align: center;"> Add Students </h2>
+        <h2 class="modal-title" id="myModalLabel" style="text-align: center;"> Add School </h2>
     </div>
 
     <form id="formLeaderEdit" method="post" style="padding: 50;">
         <div class="editor-label">
-            @Html.Label("Name", new { @name = "name", required = "required", type = "text", id = "lblName" })
+            @Html.Label("School Name", new { @name = "name", required = "required", type = "text", id = "lblName" })
         </div>
         <div class="editor-label">
             @Html.TextBoxFor(m => m.Name)

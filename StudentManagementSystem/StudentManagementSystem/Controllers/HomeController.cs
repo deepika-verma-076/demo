@@ -413,7 +413,7 @@ namespace StudentManagementSystem.Controllers
                 }
                 else
                 {
-                    std.Standard_Id = Convert.ToInt32(s2);
+                    std.Standard_Id = Convert.ToInt32(dr["Standard_Id"]);
                 }
                 //std.Section_Id = Convert.ToInt32(dr["Section_Id"]);
 
@@ -424,7 +424,7 @@ namespace StudentManagementSystem.Controllers
                 }
                 else
                 {
-                    std.Section_Id = Convert.ToInt32(s3);
+                    std.Section_Id = Convert.ToInt32(dr["Section_Id"]);
                 }
                 li.Add(std);
             }
